@@ -9,7 +9,7 @@
 
 # functions, helper -------------------------------------------------------
 
-# @export
+#' @export
 derive_intraplate_ref <- \(ds, v, ref_name) {
   ds[SampleType == 'Calibrator', (ref_name) := median(get(v)), .(PlateId, variable)]
 }
@@ -178,7 +178,7 @@ calibration_norm <- function(ds, v, ref, ext) {
 #' @importFrom magrittr %>%
 #' @export
 
-anml_norm <- function(ds, v, ref, ext, mad = 'mad', iterations = 100, verbose = FALSE) {
+anml_norm <- function(ds, v, ref, ext, mad.ref = 'mad', iterations = 100, verbose = FALSE) {
   sf_name <- paste0('sf', ext)
 
   ds[!(SampleType %in% c('Sample', 'QC')), (sf_name) := 1]

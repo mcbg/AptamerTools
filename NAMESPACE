@@ -2,6 +2,7 @@
 
 export(anml_norm)
 export(calibration_norm)
+export(derive_intraplate_ref)
 export(hyb_norm)
 export(intraplate_norm)
 export(normalization_pipeline)
